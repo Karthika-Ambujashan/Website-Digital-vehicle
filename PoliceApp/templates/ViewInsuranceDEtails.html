@@ -1,0 +1,70 @@
+{% extends "Policeindex.html" %}
+      <!-- Content Header (Page header) -->
+      {% block content %}
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>DataTables</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">INSURANCE TABLE</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example2" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>OWNER NAME</th>
+                                            <th>REGISTRATION NO</th>
+                                            <th>ENGINE NO</th>
+                                            <th>CHASSIS NO</th>
+                                            <th>INSURANCE PERIOD FROM</th>
+                                            <th>INSURANCE PERIOD TO</th>
+                                            
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in data %}
+                                        <tr>
+                                            <td>{{i.owner_name}}</td>
+                                            <td>{{i.registration_no}}</td>
+                                            <td>{{i.engine_no}}</td>
+                                            <td>{{i.chassis_no}}</td>
+                                            <td>{{i.period_from}}</td>
+                                            <td>{{i.period_to}}</td>
+                                            
+                                             </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        {% endblock %}
+        <!-- /.content -->
+    

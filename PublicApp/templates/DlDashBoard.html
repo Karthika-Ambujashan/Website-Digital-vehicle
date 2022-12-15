@@ -1,0 +1,125 @@
+{% extends "Publicindex.html" %}
+<!-- Content Header (Page header) -->
+{% load static %}
+{% block content %}
+<div
+class="container-fluid page-header py-5 mb-5 wow fadeIn"
+data-wow-delay="0.1s"
+>
+<div class="container text-center py-5">
+  <h1 class="display-4 text-white animated slideInDown mb-4">
+    DL DETAILS
+  </h1>
+  <nav aria-label="breadcrumb animated slideInDown">
+    <ol class="breadcrumb justify-content-center mb-0">
+      <li class="breadcrumb-item">
+        <a class="text-yellow" href="{% url 'Publicindex' %}">Home</a>
+      </li>
+      
+      <li class="breadcrumb-item text-primary active" aria-current="page">
+        DL Details
+      </li>
+    </ol>
+  </nav>
+</div>
+</div>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="container">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">DL Details</h3>
+              </div>
+              
+              <!-- /.card-header -->
+              {% for i in data %}  
+              <div class="container">
+                <div class="row">
+                <div class="col-md-6 pt-3">
+                <h2>DrivingLicenseNo</h2>
+                <p>{{i.dlid.drivinglicenseNo}}</p>
+                </div>
+                
+                <div class="col-md-6 pt-3">
+                <h2>HOLDER NAME</h2>
+                <p>{{i.dlid.holder_name}}</p>
+                </div>
+                </div>
+                    
+                <div class="row">
+                <div class="col-md-6 pt-3">
+                <h2>LICENSE AUTHORITY</h2>
+                <p>{{i.dlid.license_authority}}</p>
+                </div>
+                        
+                <div class="col-md-6 pt-3">
+                  
+                <h2>VEHICLE CLASS</h2>
+                <p>{{i.dlid.vehicle_class}}</p>
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col-md-6 pt-3">
+
+                <h2>ISSUE DATE</h2>
+                <p>{{i.dlid.issue_date}}</p>
+                </div>
+                
+                <div class="col-md-6 pt-3">
+
+                <h2>LICENSE VALIDITY</h2>
+                <p>{{i.dlid.license_validity}}</p>
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col-md-6">
+                  
+                <h2>DATE OF BIRTH</h2>
+                <p>{{i.dlid.dob}}</p>
+                </div>
+                </div>
+
+            
+            {% endfor %} 
+                          
+          </div>
+                                  
+          <h3 class="pt-5">{{msg}}</h3>             
+                
+               
+
+
+          <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+        
+    </div>
+      <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+      
+    </section>
+     
+    <br>
+    {% if punishment %}
+    <section>
+      <div class="container">
+      <h3>Disciplinary Action</h3>
+      {% for i in punishment %}
+      <p>Reason : {{i.reason}}</p>
+      <p>Amount to be paid : {{i.amount}}</p>
+      <br><br>
+      {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+    {% endblock %}

@@ -1,0 +1,126 @@
+{% extends "index.html" %}
+<!-- Content Header (Page header) -->
+{% block content %}
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>General Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">General Form</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add LicenseDetails</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form action="{% url 'getdl' %}" id="frm" method = "post">
+                {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="drivinglicenceNo">DrivinglicenseNo</label>
+                    <input type="text" class="form-control" name="drivinglicenseNo" id="drivinglicenseNo">
+                  </div>
+                  <div class="form-group">
+                    <label for="holdername">HolderName</label>
+                    <input type="text" class="form-control"  name="holder_name" id="holder_name">
+                  </div>
+                  <div class="form-group">
+                    <label for="license authority">License Authority</label>
+                    <input type="text" class="form-control"  name="license_authority" id="license_authority">
+                  </div>
+                  <div class="form-group">
+                    <label for="vehicle class">Vehicle Class</label>
+                    <input type="text" class="form-control" name="vehicle_class" id="vehicle_class">
+                  </div>
+                  <div class="form-group">
+                    <label for="issue date">Issue Date</label>
+                    <input type="date" class="form-control" name="issue_date" id="issue_date">
+                  </div>
+                  <div class="form-group">
+                    <label for="license validity">License Validity</label>
+                    <input type="date" class="form-control" name="license_validity" id="license_validity">
+                  </div>
+                  <div class="form-group">
+                    <label for="dob">Date Of Birth</label>
+                    <input type="date" class="form-control" name="dob" id="dob">
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <head>
+      <style type="text/css">
+        .error{
+        color: red
+        }
+        </style>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+    <script type="text/javascript">
+     $('#frm').validate({
+     rules: {
+     drivinglicenseNo: {
+     required: true,
+     minlength: 16
+     },
+     holder_name:{
+     required:true,
+     minlength:5
+     },
+     license_authority:{
+     required:true,
+     minlength:5
+     },
+     vehicle_class:{
+     required:true,
+     minlength:5
+     },
+     issue_date:{
+     required:true,
+     date:true
+     },
+     license_validity:{
+     required:true,
+     date:true
+    },
+    dob:{
+    required:true,
+    date:true
+    }
+    
+  }
+    })
+    
+    
+    </script>
+
+
+    {% endblock %}
+    <!-- /.content -->
+  

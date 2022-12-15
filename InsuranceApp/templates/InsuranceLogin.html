@@ -1,0 +1,84 @@
+{% extends "Publicindex.html" %}
+<!-- Page Header Start -->
+{% load static %}
+{% block content %}
+    <div
+      class="container-fluid page-header py-5 mb-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container text-center py-5">
+        <h1 class="display-4 text-white animated slideInDown mb-4">
+         INSURANCE LOGIN
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-yellow" href="#">Home</a>
+            </li>
+            
+            <li class="breadcrumb-item text-primary active" aria-current="page">
+              INSURANCE LOGIN
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-4 align-items-center">
+            </div>
+          </div>
+          <form action="{% url 'getInsuranceData' %}" method="post">
+            {% csrf_token %}
+          <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input name="email"
+                      type="email"
+                      class="form-control border-0 bg-light"
+                      id="email"
+                      placeholder="email"
+                    />
+                    <label for="name">EMAIL</label>
+                  </div>
+                </div>
+            </div>
+            <div class="row g-3 pt-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input name="password"
+                    type="password"
+                    class="form-control border-0 bg-light"
+                    id="name"
+                    placeholder="Password"
+                  />
+                  <label for="name">Password</label>
+                </div>
+              </div>
+          </div>
+                <div class="col-12 pt-3">
+                  <button class="btn btn-primary py-3 px-5" type="submit">
+                   SIGN IN
+                  </button>
+                </div>
+             
+              <div>
+              &nbsp;<p><a href="{% url 'InsuranceRegistration' %}">Don't have an account? Sign up</a></p>
+              </div>
+              <div>
+                &nbsp;<p>{{msg}}</p>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    <!-- Contact End -->
+
+    

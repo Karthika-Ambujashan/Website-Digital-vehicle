@@ -1,0 +1,92 @@
+{% extends "Policeindex.html" %}
+      <!-- Content Header (Page header) -->
+      {% block content %}
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>DataTables</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">DataTable</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body table-responsive">
+                                <table id="example2" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>OWNER NAME</th>
+                                            <th>REGISTERED RTO</th>
+                                            <th>MAKER MODEL</th>
+                                            <th>VEHICLE CLASS</th>
+                                            <th>FUEL NORMS</th>
+                                            <th>ENGINE NO</th>
+                                            <th>CHASSIS NO</th>
+                                            <th>REGISTRATION DATE</th>
+                                            <th>FITNESS UPTO</th>
+                                            <th>INSURANCE EXPIRY</th>
+                                            <th>INSURANCE EXPIRY IN</th>
+                                            <th>REGISTRATION NO</th>
+                                            <th>COLOR</th>
+                                            <th>UNLOADED WEIGHT</th>
+                                            <th>EDIT</th>
+                                            <th>DELETE</th>
+
+
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in data %}
+                                        <tr>
+                                            <td>{{i.owner_name}}</td>
+                                            <td>{{i.registered_rto}}</td>
+                                            <td>{{i.maker_model}}</td>
+                                            <td>{{i.vehicle_class}}</td>
+                                            <td>{{i.fuel_norms}}</td>
+                                            <td>{{i.engine_no}}</td>
+                                            <td>{{i.chassis_no}}</td>
+                                            <td>{{i.registration_date}}</td>
+                                            <td>{{i.fitness_upto}}</td>
+                                            <td>{{i.insurance_expiry}}</td>
+                                            <td>{{i.insurance_expiry_in}}</td>
+                                            <td>{{i.registration_no}}</td>
+                                            <td>{{i.color}}</td>
+                                            <td>{{i.unloaded_weight}}</td>
+                                            <td><a href= "{% url 'edit' sid=i.id %}"><button class="btn btn-success">EDIT</button></a></td>
+                                            <td><a href= "{% url 'delete' sid=i.id %}"><button class="btn btn-danger">DELETE</button></a></td>
+                                            
+                                            
+                                          </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+
+{% endblock %}
+        <!-- /.content -->

@@ -1,0 +1,83 @@
+{% extends "Publicindex.html" %}
+<!-- Page Header Start -->
+{% load static %}
+{% block content %}
+    <div
+      class="container-fluid page-header py-5 mb-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container text-center py-5">
+        <h1 class="display-4 text-white animated slideInDown mb-4">
+          Check Rc
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Home</a>
+            </li>
+            
+            <li class="breadcrumb-item text-primary active" aria-current="page">
+              Check RC
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-4 align-items-center">
+              
+            </div>
+          
+          </div>
+          
+          <form action="{% url 'Submit_rc' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" value="{{rid}}" name="rid">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control border-0 bg-light"
+                      id="engine_no" name="engine_no"
+                      placeholder="engine_no"
+                    />
+                    <label for="engine_no">ENGINE NO</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="chassis_no"
+                      class="form-control border-0 bg-light"
+                      id="chassis_no" name="chassis_no"
+                      placeholder="chassis_no"
+                    />
+                    <label for="chassis_no">CHASSIS No</label>
+                  </div>
+                </div>
+                
+                
+              
+                
+                <div class="col-12">
+                  <button class="btn btn-primary py-3 px-5" type="submit">
+                   submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    <!-- Contact End -->
+
+    

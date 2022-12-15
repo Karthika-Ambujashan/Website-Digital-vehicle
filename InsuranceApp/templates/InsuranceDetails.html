@@ -1,0 +1,173 @@
+{% extends "Publicindex.html" %}
+<!-- Page Header Start -->
+{% load static %}
+{% block content %}
+    <div
+      class="container-fluid page-header py-5 mb-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container text-center py-5">
+        <h1 class="display-4 text-white animated slideInDown mb-4">
+          INSURANCE DETAILS
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Home</a>
+            </li>
+            
+            <li class="breadcrumb-item text-primary active" aria-current="page">
+              INSURANCE DETAILS
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-4 align-items-center">
+              
+            </div>
+          
+          </div>
+          
+          <form action="{% url 'getInsuranceDetails' %}" id="frm2" method="post">
+            {% csrf_token %}
+            
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="">
+                    <label>OWNER NAME</label>
+                    <input
+                      type="text"
+                      class="form-control border-0 bg-light"
+                      id="owner_name" name="owner_name"
+                      placeholder="owner_name"
+                    />
+                    
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="">
+                    <label>ENGINE NO</label>
+                    <input
+                      type="text"
+                      class="form-control border-0 bg-light"
+                      id="engine_no" name="engine_no"
+                      placeholder="engine_no"
+                    />
+                    
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="">
+                      <label>REGISTRATION NO</label>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light"
+                        id="registration_no" name="registration_no"
+                        placeholder="registration_no"
+                      />
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label>CHASSIS NO</label>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light"
+                        id="chassis_no" name="chassis_no"
+                        placeholder="chassis_no"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label>PERIOD FROM</label>
+                      <input
+                        type="date"
+                        class="form-control border-0 bg-light"
+                        id="period_from" name="period_from"
+                        placeholder="period_from"
+                      />
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label>PERIOD TO</label>
+                      <input
+                        type="date"
+                        class="form-control border-0 bg-light"
+                        id="period_to" name="period_to"
+                        placeholder="period_to"
+                      />
+                      
+                    </div>
+                  </div>
+                <div class="col-12">
+                  <button class="btn btn-primary py-3 px-5" type="submit">
+                   submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+      <style type="text/css">
+        .error{
+        color: red;
+        padding: 20px;
+        }
+        </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+   <script type="text/javascript">
+    $('#frm2').validate({
+    rules: {
+    owner_name: {
+    required: true,
+    minlength: 5
+    },
+    engine_no:{
+    required:true,
+    minlength: 10
+    },
+    registration_no:{
+    required:true,
+    minlength:5
+    },
+    chassis_no:{
+    required:true,
+    minlength:5
+    },
+    period_from:{
+    required:true,
+    date:true
+    },
+    period_to:{
+    required:true,
+    date:true
+    }
+}
+   
+   
+    })
+   
+   
+   </script>
+    {% endblock %}
+    <!-- Contact End -->
+
+    

@@ -1,0 +1,107 @@
+{% extends "index.html" %}
+<!-- Content Header (Page header) -->
+{% block content %}
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>General Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">General Form</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add RC Details</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              {% for i in data %}
+              <form action="{% url 'update' sid=i.id %}" method = "post">
+                {% csrf_token %}
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="owner_name">OWNER NAME</label>
+                        <input type="text" class="form-control" name="owner_name"value="{{i.owner_name}}"  id="owner_name">
+                      </div>
+                  <div class="form-group">
+                    <label for="registered_rto">Registered RTO</label>
+                    <input type="text" class="form-control" name="registered_rto" value="{{i.registered_rto}}" id="registered_rto">
+                  </div>
+                  <div class="form-group">
+                    <label for="maker_model">MAKER MODEL</label>
+                    <input type="text" class="form-control"  name="maker_model" value="{{i.maker_model}}"  id="maker_model">
+                  </div>
+                  <div class="form-group">
+                    <label for="vehicle_class">VEHICLE CLASS</label>
+                    <input type="text" class="form-control"  name="vehicle_class" value="{{i.vehicle_class}}"  id="vehicle_class">
+                  </div>
+                  <div class="form-group">
+                    <label for="fuel_norms">FUEL NORMS</label>
+                    <input type="text" class="form-control" name="fuel_norms" value="{{i.fuel_norms}}"  id="fuel_norms">
+                  </div>
+                  <div class="form-group">
+                    <label for="engine_no">ENGINE NO</label>
+                    <input type="text" class="form-control" name="engine_no"  value="{{i.engine_no}}" id="engine_no">
+                  </div>
+                  <div class="form-group">
+                    <label for="chassis_no">CHASSIS NO</label>
+                    <input type="text" class="form-control" name="chassis_no"  value="{{i.chassis_no}}" id="chassis_no">
+                  </div>
+                  <div class="form-group">
+                    <label for="registration_date">REGISTRATION DATE</label>
+                    <input type="date" class="form-control" name="registration_date"  value="{{i.registration_date}}" id="registration_date">
+                  </div>
+                  <div class="form-group">
+                    <label for="fitness_upto">FITNESS UPTO</label>
+                    <input type="date" class="form-control" name="fitness_upto" value="{{i.fitness_upto}}" id="fitness_upto">
+                  </div>
+                  <div class="form-group">
+                    <label for="insurance_expiry">INSURANCE EXPIRY</label>
+                    <input type="date" class="form-control" name="insurance_expiry" value="{{i.insurance_expiry}}" id="insurance_expiry">
+                  </div>
+                  <div class="form-group">
+                    <label for="insurance_expiry_in">INSURANCE EXPIRY IN</label>
+                    <input type="date" class="form-control" name="insurance_expiry_in" value="{{i.insurance_expiry_in}}" id="insurance_expiry_in">
+                  </div>
+                  <div class="form-group">
+                    <label for="registration_no">REGISTRATION NO</label>
+                    <input type="text" class="form-control" name="registration_no"  value="{{i.registration_no}}" id="registration_no">
+                  </div>
+                  <div class="form-group">
+                    <label for="color">COLOR</label>
+                    <input type="text" class="form-control" name="color"  value="{{i.color}}"id="color">
+                  </div>
+                  <div class="form-group">
+                    <label for="unloaded_weight">UNLOADED WEIGHT</label>
+                    <input type="number" class="form-control" name="unloaded_weight" value="{{i.unloaded_weight}}" id="unloaded_weight">
+                  </div>
+                 <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+              {% endfor %}
+            </div>
+            <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    {% endblock %}
+    <!-- /.content -->
+  

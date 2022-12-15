@@ -1,0 +1,75 @@
+{% extends "index.html" %}
+      <!-- Content Header (Page header) -->
+      {% block content %}
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>DataTables</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">DataTable</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example2" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>DrivingLicenseNo</th>
+                                            <th>HolderName</th>
+                                            <th>License Authority</th>
+                                            <th>Vehicle Class</th>
+                                            <th>IssueDate</th>
+                                            <th>License Validity</th>
+                                            <th>Date of Birth</th>
+                                            <th>EDIT</th>
+                                            <th>DELETE</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in data %}
+                                        <tr>
+                                            <td>{{i.drivinglicenseNo}}</td>
+                                            <td>{{i.holder_name}}</td>
+                                            <td>{{i.license_authority}}</td>
+                                            <td>{{i.vehicle_class}}</td>
+                                            <td>{{i.issue_date}}</td>
+                                            <td>{{i.license_validity}}</td>
+                                            <td>{{i.dob}}</td>
+                                            <td><a href= "{% url 'edit1' sid=i.id %}"><button class="btn btn-success">EDIT</button></a></td>
+                                            <td><a href= "{% url 'delete1' sid=i.id %}"><button class="btn btn-danger">DELETE</button></a></td>
+                                            
+                                          </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        {% endblock %}
+        <!-- /.content -->
+    

@@ -1,0 +1,247 @@
+{% extends "Publicindex.html" %}
+<!-- Page Header Start -->
+{% load static %}
+{% block content %}
+    <div
+      class="container-fluid page-header py-5 mb-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container text-center py-5">
+        <h1 class="display-4 text-white animated slideInDown mb-4">
+          POLLUTION DETAILS
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-white" href="#">Home</a>
+            </li>
+            
+            <li class="breadcrumb-item text-primary active" aria-current="page">
+                POLLUTION DETAILS
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-4 align-items-center">
+              
+            </div>
+          
+          </div>
+          
+          <form action="{% url 'getPollutionDetails' %}" id="frm6" method="post">
+            {% csrf_token %}
+            
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="">
+                    <label for="registration_no">REGISTRATION NO</label>
+                    <input
+                      type="text"
+                      class="form-control border-0 bg-light"
+                      id="registration_no" name="registration_no"
+                      placeholder="registration_no"
+                    />
+                    
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="">
+                    <label for="vehicle_make">VEHICLE MAKE</label>
+                    <input
+                      type="text"
+                      class="form-control border-0 bg-light"
+                      id="vehicle_make" name="vehicle_make"
+                      placeholder="vehicle_make"
+                    />
+                    
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="">
+                      <label for="vehicle_model">VEHICLE MODEL</label>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light"
+                        id="vehicle_model" name="vehicle_model"
+                        placeholder="vehicle_model"
+                      />
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label for="yearof_manufacture">YEAR OF MANUFACTURE</label>
+                      <input
+                        type="date"
+                        class="form-control border-0 bg-light"
+                        id="yearof_manufacture" name="yearof_manufacture"
+                        placeholder="yearof_manufacture"
+                      />
+                     
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label for="typeof_vehicle">TYPE OF VEHICLE</label>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light"
+                        id="typeof_vehicle" name="typeof_vehicle"
+                        placeholder="typeof_vehicle"
+                      />
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label for="typeof_engine">TYPE OF ENGINE</label>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light"
+                        id="typeof_engine" name="typeof_engine"
+                        placeholder="typeof_engine"
+                      />
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label for="id_number">ID NUMBER</label>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light"
+                        id="id_number" name="id_number"
+                        placeholder="id_number"
+                      />
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label for="engine_no">ENGINE NO</label>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light"
+                        id="engine_no" name="engine_no"
+                        placeholder="engine_no"
+                      />
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light"
+                        id="speedo_meter" name="speedo_meter"
+                        placeholder="speedo_meter"
+                      />
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label for="date">DATE</label>
+                      <input
+                        type="date"
+                        class="form-control border-0 bg-light"
+                        id="date" name="date"
+                        placeholder="date"
+                      />
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <label for="fuel">FUEL</label>
+                      <input
+                        type="text"
+                        class="form-control border-0 bg-light"
+                        id="fuel" name="fuel"
+                        placeholder="fuel"
+                      />
+                     
+                    </div>
+                  </div>
+                <div class="col-12">
+                  <button class="btn btn-primary py-3 px-5" type="submit">
+                   submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style type="text/css">
+      .error{
+      color: red;
+      padding: 20px;
+      }
+      </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+ <script type="text/javascript">
+  $('#frm6').validate({
+  rules: {
+  registration_no: {
+  required: true,
+  minlength: 5
+  },
+  vehicle_make:{
+  required:true,
+  minlength: 10
+  },
+  vehicle_model:{
+  required:true,
+  minlength:5
+  },
+  yearof_manufacture:{
+  required:true,
+  minlength:5
+  },
+  typeof_vehicle:{
+  required:true,
+  minlength:5
+  },
+  typeof_engine:{
+  required:true,
+  minlength:5
+  },
+  id_number:{
+  required:true,
+  minlength:5
+  },
+  speedo_meter:{
+  required:true,
+  minlength:5
+  },
+  date:{
+  required:true,
+  date:true
+  },
+  fuel:{
+  required:true,
+  minlength:5
+  }
+}
+ 
+ 
+  })
+ 
+ 
+ </script>
+    {% endblock %}
+    <!-- Contact End -->
+
+    

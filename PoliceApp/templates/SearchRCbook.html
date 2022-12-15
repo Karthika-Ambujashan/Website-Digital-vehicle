@@ -1,0 +1,112 @@
+{% extends "Policeindex.html" %}
+<!-- Content Header (Page header) -->
+{% block content %}
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>General Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">General Form</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">RC Details</h3>
+              </div>
+              <!-- /.card-header -->
+              {% for i in data %}  
+           <div>
+            <h2>OWNER NAME</h2>
+            <p>{{i.owner_name}}</p>
+            </div>
+            <div>
+                <h2>REGISTERED RTO</h2>
+                <p>{{i.registered_rto}}</p>
+                </div>
+                <div>
+                    <h2>MAKER MODEL</h2>
+                    <p>{{i.maker_model}}</p>
+                    </div>
+                    <div>
+                        <h2>VEHICLE CLASS</h2>
+                        <p>{{i.vehicle_class}}</p>
+                        </div>
+                        <div>
+                            <h2>FUEL NORMS</h2>
+                            <p>{{i.fuel_norms}}</p>
+                            </div>
+                            <div>
+                                <h2>ENGINE NO</h2>
+                                <p>{{i.engine_no}}</p>
+                                </div>
+                                <div>
+                                    <h2>CHASSIS NO</h2>
+                                    <p>{{i.chassis_no}}</p>
+                                    </div>
+                                    <div>
+                                        <h2>REGISTRATION DATE</h2>
+                                        <p>{{i.registration_date}}</p>
+                                        </div>
+                                        <div>
+                                            <h2>REGISTRATION DATE</h2>
+                                            <p>{{i.registration_date}}</p>
+                                            </div>
+                                            <div>
+                                                <h2>FITNESS UPTO</h2>
+                                                <p>{{i.fitness_upto}}</p>
+                                                </div>
+                                                <div>
+                                                    <h2>REGISTRATION DATE</h2>
+                                                    <p>{{i.registration_date}}</p>
+                                                    </div>
+                                                    <div>
+                                                        <h2>INSURANCE EXPIRY</h2>
+                                                        <p>{{i.insurance_expiry}}</p>
+                                                        </div>
+                                                        <div>
+                                                            <h2>INSURANCE EXPIRY  IN</h2>
+                                                            <p>{{i.insurance_expiry_in}}</p>
+                                                            </div>
+                                                            <div>
+                                                                <h2>INSURANCE EXPIRY</h2>
+                                                                <p>{{i.insurance_expiry}}</p>
+                                                                </div>
+                                                                <div>
+                                                                    <h2>REGISTRATION NO</h2>
+                                                                    <p>{{i.registration_no}}</p>
+                                                                    </div>
+                                                                    <div>
+                                                                        <h2>COLOR</h2>
+                                                                        <p>{{i.color}}</p>
+                                                                        </div>
+                                                                        <div>
+                                                                            <h2>UNLOADED WEIGHT</h2>
+                                                                            <p>{{i.unloaded_weight}}</p>
+                                                                            </div>
+
+          <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+        {% endfor %}
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    {% endblock %}
+    <!-- /.content -->
+  

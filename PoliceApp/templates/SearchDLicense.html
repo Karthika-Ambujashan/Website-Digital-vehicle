@@ -1,0 +1,79 @@
+{% extends "Policeindex.html" %}
+<!-- Content Header (Page header) -->
+{% block content %}
+{% for i in data %}  
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>General Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <form action="{% url 'DisciplinaryAction' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="id" value="{{i.id}}">
+                <input type="submit" class="btn btn-outline-primary" value="Disciplinary Action">
+              </form>
+             
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">DL Details</h3>
+              </div>
+              <!-- /.card-header -->
+            
+           <div>
+            <h2>DrivingLicenseNo</h2>
+            <p>{{i.drivinglicenseNo}}</p>
+            </div>
+            <div>
+                <h2>HOLDER NAME</h2>
+                <p>{{i.holder_name}}</p>
+                </div>
+                <div>
+                    <h2>LICENSE AUTHORITY</h2>
+                    <p>{{i.license_authority}}</p>
+                    </div>
+                    <div>
+                        <h2>VEHICLE CLASS</h2>
+                        <p>{{i.vehicle_class}}</p>
+                        </div>
+                        <div>
+                            <h2>ISSUE DATE</h2>
+                            <p>{{i.issue_date}}</p>
+                            </div>
+                            <div>
+                                <h2>LICENSE VALIDITY</h2>
+                                <p>{{i.license_validity}}</p>
+                                </div>
+                                <div>
+                                    <h2>DATE OF BIRTH</h2>
+                                    <p>{{i.dob}}</p>
+                                    </div>
+                                            
+
+          <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+     
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    {% endfor %}
+    {% endblock %}
+    <!-- /.content -->
+  

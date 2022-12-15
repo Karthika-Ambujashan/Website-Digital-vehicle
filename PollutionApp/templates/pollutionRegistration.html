@@ -1,0 +1,109 @@
+{% extends "Publicindex.html" %}
+<!-- Page Header Start -->
+{% load static %}
+{% block content %}
+    <div
+      class="container-fluid page-header py-5 mb-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container text-center py-5">
+        <h1 class="display-4 text-white animated slideInDown mb-4">
+        POLLUTION REGISTRATION
+        </h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+          <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item">
+              <a class="text-yellow" href="#">Home</a>
+            </li>
+            
+            <li class="breadcrumb-item text-primary active" aria-current="page">
+            POLLUTION REGISTRATION
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-4 align-items-center">
+            </div>
+          </div>
+          <form action="{% url 'getPollution' %}" id="frm4" method="post">
+            {% csrf_token %}
+          <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="">
+                    <label for="email">EMAIL</label>
+                    <input name="email"
+                      type="email"
+                      class="form-control border-0 bg-light"
+                      id="email"
+                      placeholder="email"
+                    />
+                    
+                  </div>
+                </div>
+            </div>
+            <div class="row g-3 pt-3">
+              <div class="col-md-6">
+                <div class="">
+                  <label for="name">Password</label>
+                  <input name="Password"
+                    type="password"
+                    class="form-control border-0 bg-light"
+                    id="Password"
+                    placeholder="Password"
+                  />
+                  
+                </div>
+              </div>
+          </div>
+                <div class="col-12 pt-3">
+                  <button class="btn btn-primary py-3 px-5" type="submit">
+                   SIGN IN
+                  </button>
+                </div>
+             
+              <div>
+              &nbsp;<p><a href="{% url 'pollutionRegistration' %}">Don't have an account? Sign up</a></p>
+              </div>
+              <div>
+                &nbsp;<p>{{msg}}</p>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style type="text/css">
+      .error{
+      color: red
+      }
+      </style>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+         <script type="text/javascript">
+          $('#frm4').validate({
+          rules: {
+          email:{
+          required: true,
+          email:true
+          },
+          Password:{
+          required: true,
+          minlength:5
+          }
+        }
+        })
+         
+         
+      </script>
+    {% endblock %}
+    <!-- Contact End -->
+
+    

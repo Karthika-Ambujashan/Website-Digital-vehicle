@@ -1,0 +1,94 @@
+{% extends "Policeindex.html" %}
+      <!-- Content Header (Page header) -->
+      {% block content %}
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>DataTables</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">REPORT TABLE</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>DATE REPORTED</th>
+                                    <th>COLOR</th>
+                                    <th>BODY STYLE</th>
+                                    <th>MARKER PLATENUMBER</th>
+                                    <th>VEHICLE REGISTERED</th>
+                                    <th>VEHICLE REGISTRED STATE</th>
+                                    <th>DOOR LOCKED</th>
+                                    <th>KEYS IN VEHICLE</th>
+                                    <th>NAME OF OWNER</th>
+                                    <th>ADDRESS</th>
+                                    <th>COURT AVAILABLE</th>
+                                    <th>DATE VEHICLE Stolen</th>
+                                    <th>VEHICLE IDENTIFICATION NUMBER</th>
+                                    <th>NAME OF INSURANCE</th>
+                                    <th>PHONE NUMBER</th>
+                                    <th>DAY OF WEEK</th>
+                                    <th>TIME</th>
+                                    <th>LOCATION FROM</th>
+                                    
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in data %}
+                                <tr>
+                                    <td>{{i.date_reported}}</td>
+                                    <td>{{i.color}}</td>
+                                    <td>{{i.Body_style}}</td>
+                                    <td>{{i.marker_platenumber}}</td>
+                                    <td>{{i.vehicle_registered}}</td>
+                                    <td>{{i.vehicle_register_state}}</td>
+                                    <td>{{i.door_locked}}</td>
+                                    <td>{{i.keys_invehicle}}</td>
+                                    <td>{{i.nameof_owner}}</td>
+                                    <td>{{i.address}}</td>
+                                    <td>{{i.court_available}}</td>
+                                    <td>{{i.date_vehicle_stolen}}</td>
+                                    <td>{{i.vehicle_identification_number}}</td>
+                                    <td>{{i.nameof_insurance_company}}</td>
+                                    <td>{{i.phone_number}}</td>
+                                    <td>{{i.dayof_week}}</td>
+                                    <td>{{i.time}}</td>
+                                    <td>{{i.location_from}}</td>
+                                    
+                                     </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+{% endblock %}
+<!-- /.content -->
+
+    

@@ -1,0 +1,123 @@
+{% extends "Publicindex.html" %}
+<!-- Content Header (Page header) -->
+{% load static %}
+{% block content %}
+<div
+class="container-fluid page-header py-5 mb-5 wow fadeIn"
+data-wow-delay="0.1s"
+>
+<div class="container text-center py-5">
+  <h1 class="display-4 text-white animated slideInDown mb-4">
+    RC DETAILS
+  </h1>
+  <nav aria-label="breadcrumb animated slideInDown">
+    <ol class="breadcrumb justify-content-center mb-0">
+      <li class="breadcrumb-item">
+        <a class="text-yellow" href="#">Home</a>
+      </li>
+      
+      <li class="breadcrumb-item text-primary active" aria-current="page">
+        RC Details
+      </li>
+    </ol>
+  </nav>
+</div>
+</div>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">RC Details</h3>
+              </div>
+              
+              <!-- /.card-header -->
+              {% for i in data %}  
+           <div>
+             <div class="container">
+              <div class="row">
+                <div class="col-md-6 pt-3">
+                  <h2>OWNER NAME</h2>
+                  <p>{{i.rid.owner_name}}</p>
+                </div>
+                <div class="col-md-6 pt-3">
+                  <h2>REGISTERED RTO</h2>
+                  <p>{{i.rid.registered_rto}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 pt-3">
+                  <h2>MAKER MODEL</h2>
+                  <p>{{i.rid.maker_model}}</p>
+                </div>
+                <div class="col-md-6 pt-3">
+                  <h2>VEHICLE CLASS</h2>
+                  <p>{{i.rid.vehicle_class}}</p>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 pt-3">
+                    <h2>FUEL NORMS</h2>
+                    <p>{{i.rid.fuel_norms}}</p>
+                  </div>
+                  <div class="col-md-6 pt-3">
+                    <h2>ENGINE NO</h2>
+                    <p>{{i.rid.engine_no}}</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pt-3">
+                      <h2>CHASSIS NO</h2>
+                      <p>{{i.rid.chassis_no}}</p>
+                    </div>
+                     <div class="col-md-6 pt-3">
+                      <h2>REGISTRATION DATE</h2>
+                      <p>{{i.rid.registration_date}}</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 pt-3">
+                        <h2>FITNESS UPTO</h2>
+                        <p>{{i.rid.fitness_upto}}</p>
+                      </div>
+                      
+                        <div class="col-md-6 pt-3">
+                          <h2>INSURANCE EXPIRY</h2>
+                          <p>{{i.rid.insurance_expiry}}</p>
+                        </div>
+                        <div class="row">
+                        <div class="col-md-6 pt-3">
+                          <h2>INSURANCE EXPIRY  IN</h2>
+                           <p>{{i.rid.insurance_expiry_in}}</p>
+                           </div>
+                             <div class="col-md-6 pt-3">
+                              <h2>REGISTRATION NO</h2>
+                              <p>{{i.rid.registration_no}}</p>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6 pt-3">
+                                <h2>COLOR</h2>
+                                <p>{{i.rid.color}}</p>
+                              </div>
+                              <div class="col-md-6 pt-3">
+                                 <h2>UNLOADED WEIGHT</h2>
+                                 <p>{{i.rid.unloaded_weight}}</p>
+                                </div>
+                              </div>
+                              {% endfor %}
+                            </div>                       
+              
+          <!-- /.card -->
+          </div>
+          <!--/.col (right) -->
+        </div>
+        
+    </div>
+      <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+      
+    </section>
+    {% endblock %}
